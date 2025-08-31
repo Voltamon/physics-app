@@ -60,68 +60,59 @@ export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProp
 
   return (
     <>
-      {/* Small visible sidebar trigger */}
+      {/* Full height sidebar trigger */}
       <div
         ref={triggerRef}
         className={cn(
-          "fixed left-0 top-1/2 -translate-y-1/2 w-8 h-16 bg-white shadow-lg rounded-r-lg z-40 flex items-center justify-center cursor-pointer transition-all duration-300 hover:w-10",
-          isOpen && "opacity-0 pointer-events-none"
+          "fixed left-0 top-0 w-8 h-full bg-white shadow-lg z-40 flex items-center justify-center cursor-pointer transition-all duration-300 hover:w-10",
+          isOpen && "w-64"
         )}
-        onClick={() => onOpenChange(true)}
+        onClick={() => !isOpen && onOpenChange(true)}
       >
-        <Menu className="h-4 w-4 text-gray-600" />
-      </div>
-
-      {/* Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/20 z-40"
-          onClick={() => onOpenChange(false)}
-        />
-      )}
-
-      {/* Sidebar */}
-      <div
-        ref={sidebarRef}
-        className={cn(
-          "fixed left-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50",
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        )}
-      >
-        <div className="flex items-center justify-between p-4 border-b">
-          <h2 className="text-lg font-semibold text-gray-800">
-            {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Menu
-          </h2>
-          <button
-            onClick={() => onOpenChange(false)}
-            className="p-1 rounded-md hover:bg-gray-100 transition-colors"
+        {!isOpen && <Menu className="h-4 w-4 text-gray-600" />}
+        
+        {/* Sidebar content when open */}
+        {isOpen && (
+          <div
+            ref={sidebarRef}
+            className="w-full h-full bg-white"
           >
-            <X className="h-5 w-5 text-gray-500" />
-          </button>
-        </div>
-
-        <div className="p-4">
-          <div className="space-y-2">
-            <div className="text-sm text-gray-500 mb-4">
-              {activeTab === 'department' && 'Department options will appear here'}
-              {activeTab === 'faculty' && 'Faculty options will appear here'}
-              {activeTab === 'syllabus' && 'Syllabus options will appear here'}
+            <div className="flex items-center justify-between p-4 border-b">
+              <h2 className="text-lg font-semibold text-gray-800">
+                {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Menu
+              </h2>
+              <button
+                onClick={() => onOpenChange(false)}
+                className="p-1 rounded-md hover:bg-gray-100 transition-colors"
+              >
+                <X className="h-5 w-5 text-gray-500" />
+              </button>
             </div>
-            
-            {/* Placeholder menu items */}
-            <div className="space-y-1">
-              <div className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-600">
-                Option 1
-              </div>
-              <div className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-600">
-                Option 2
-              </div>
-              <div className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-600">
-                Option 3
+
+            <div className="p-4">
+              <div className="space-y-2">
+                <div className="text-sm text-gray-500 mb-4">
+                  {activeTab === 'department' && 'Department options will appear here'}
+                  {activeTab === 'faculty' && 'Faculty options will appear here'}
+                  {activeTab === 'syllabus' && 'Syllabus options will appear here'}
+                </div>
+                
+                {/* Placeholder menu items */}
+                <div className="space-y-1">
+                  <div className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-600">
+                    Option 1
+                  </div>
+                  <div className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-600">
+                    Option 2
+                  </div>
+                  <div className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-600">
+                    Option 3
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

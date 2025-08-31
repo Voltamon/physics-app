@@ -25,7 +25,7 @@ export default function App() {
       
       <div className={cn(
         "flex-1 flex flex-col transition-all duration-300",
-        sidebarOpen && "blur-sm"
+        sidebarOpen ? "ml-64" : "ml-8"
       )}>
         <header className="bg-white shadow-sm border-b">
           <div className="px-6 py-4">
