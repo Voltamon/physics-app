@@ -42,22 +42,19 @@ export default function App() {
       )}>
         <header className="bg-white shadow-sm border-b">
           <div className="px-6 py-4 flex items-center justify-between">
-            {/* Left side logos */}
-            <div className="flex items-center space-x-6">
-              <img 
-                src="https://cdn.brandfetch.io/id22X14dMP/w/751/h/460/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1755282519912" 
-                alt="IEM Logo" 
-                className="h-10 w-auto object-contain"
-              />
-              <img 
-                src="https://cdn.brandfetch.io/iddVcdJNqX/w/751/h/460/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1745353813183" 
-                alt="UEM Logo" 
-                className="h-10 w-auto object-contain"
-              />
+            {/* Left side - IEM logo */}
+            <div className="flex items-center">
+              <div className="w-20 h-10 flex items-center justify-center">
+                <img 
+                  src="https://cdn.brandfetch.io/id22X14dMP/w/751/h/460/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1755282519912" 
+                  alt="IEM Logo" 
+                  className="max-h-10 max-w-20 w-auto h-auto object-contain"
+                />
+              </div>
             </div>
 
-            {/* Right side tabs */}
-            <div className="flex-1 flex justify-end">
+            {/* Center - Navigation tabs */}
+            <div className="flex-1 flex justify-center">
               <Tabs value={activeTab} onValueChange={handleTabChange} className="w-auto">
                 <TabsList className="grid grid-cols-3 w-auto">
                   <TabsTrigger value="department">Department</TabsTrigger>
@@ -65,6 +62,17 @@ export default function App() {
                   <TabsTrigger value="syllabus">Syllabus</TabsTrigger>
                 </TabsList>
               </Tabs>
+            </div>
+
+            {/* Right side - UEM logo */}
+            <div className="flex items-center">
+              <div className="w-20 h-10 flex items-center justify-center">
+                <img 
+                  src="https://cdn.brandfetch.io/iddVcdJNqX/w/751/h/460/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1745353813183" 
+                  alt="UEM Logo" 
+                  className="max-h-10 max-w-20 w-auto h-auto object-contain"
+                />
+              </div>
             </div>
           </div>
         </header>
