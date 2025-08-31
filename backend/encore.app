@@ -1,1 +1,0 @@
-{"id": "academic-management-app-ui3i", "lang": "typescript"}
