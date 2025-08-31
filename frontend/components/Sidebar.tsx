@@ -6,9 +6,10 @@ interface SidebarProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   activeTab: string;
+  onTopicSelect: (topic: string, type: 'theory' | 'practical') => void;
 }
 
-export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProps) {
+export default function Sidebar({ isOpen, onOpenChange, activeTab, onTopicSelect }: SidebarProps) {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [expandedSections, setExpandedSections] = React.useState<Record<string, boolean>>({
     theory: true,
@@ -87,6 +88,10 @@ export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProp
     'Newton\'s Ring Expt'
   ];
 
+  const handleTopicClick = (topic: string, type: 'theory' | 'practical') => {
+    onTopicSelect(topic, type);
+  };
+
   return (
     <>
       {/* Invisible trigger area for opening sidebar */}
@@ -143,7 +148,8 @@ export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProp
                   {theoryModules.map((module, index) => (
                     <div
                       key={index}
-                      className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-700 border-l-2 border-blue-200 pl-4"
+                      onClick={() => handleTopicClick(module, 'theory')}
+                      className="p-2 rounded-md hover:bg-blue-50 cursor-pointer text-sm text-gray-700 border-l-2 border-blue-200 pl-4 transition-colors"
                     >
                       {index + 1}. {module}
                     </div>
@@ -171,7 +177,8 @@ export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProp
                   {practicalExperiments.map((experiment, index) => (
                     <div
                       key={index}
-                      className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-700 border-l-2 border-green-200 pl-4"
+                      onClick={() => handleTopicClick(experiment, 'practical')}
+                      className="p-2 rounded-md hover:bg-green-50 cursor-pointer text-sm text-gray-700 border-l-2 border-green-200 pl-4 transition-colors"
                     >
                       {index + 1}. {experiment}
                     </div>

@@ -9,9 +9,17 @@ import Syllabus from './components/Syllabus';
 export default function App() {
   const [activeTab, setActiveTab] = useState('department');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState<string | undefined>();
+  const [selectedType, setSelectedType] = useState<'theory' | 'practical' | undefined>();
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
+    setSidebarOpen(false);
+  };
+
+  const handleTopicSelect = (topic: string, type: 'theory' | 'practical') => {
+    setSelectedTopic(topic);
+    setSelectedType(type);
     setSidebarOpen(false);
   };
 
@@ -24,6 +32,7 @@ export default function App() {
           isOpen={sidebarOpen} 
           onOpenChange={setSidebarOpen}
           activeTab={activeTab}
+          onTopicSelect={handleTopicSelect}
         />
       )}
       
@@ -69,7 +78,7 @@ export default function App() {
               <Faculty />
             </TabsContent>
             <TabsContent value="syllabus" className="mt-0">
-              <Syllabus />
+              <Syllabus selectedTopic={selectedTopic} selectedType={selectedType} />
             </TabsContent>
           </Tabs>
         </main>
