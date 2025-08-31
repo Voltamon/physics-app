@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { cn } from '@/lib/utils';
 import Sidebar from './components/Sidebar';
 import Department from './components/Department';
 import Faculty from './components/Faculty';
@@ -22,7 +23,10 @@ export default function App() {
         activeTab={activeTab}
       />
       
-      <div className="flex-1 flex flex-col">
+      <div className={cn(
+        "flex-1 flex flex-col transition-all duration-300",
+        sidebarOpen && "blur-sm"
+      )}>
         <header className="bg-white shadow-sm border-b">
           <div className="px-6 py-4">
             <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">

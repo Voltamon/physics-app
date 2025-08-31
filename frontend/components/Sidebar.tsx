@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
-import { X } from 'lucide-react';
+import { X, Menu } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -60,16 +60,22 @@ export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProp
 
   return (
     <>
-      {/* Invisible trigger area for opening sidebar */}
+      {/* Small visible sidebar trigger */}
       <div
         ref={triggerRef}
-        className="fixed left-0 top-0 w-4 h-full z-40 bg-transparent"
-      />
+        className={cn(
+          "fixed left-0 top-1/2 -translate-y-1/2 w-8 h-16 bg-white shadow-lg rounded-r-lg z-40 flex items-center justify-center cursor-pointer transition-all duration-300 hover:w-10",
+          isOpen && "opacity-0 pointer-events-none"
+        )}
+        onClick={() => onOpenChange(true)}
+      >
+        <Menu className="h-4 w-4 text-gray-600" />
+      </div>
 
       {/* Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/20 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/20 z-40"
           onClick={() => onOpenChange(false)}
         />
       )}
