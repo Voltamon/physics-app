@@ -67,6 +67,17 @@ export default function PDFViewer({ url }: PDFViewerProps) {
         title="PDF Viewer"
         sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
       />
+
+      {!loading && !error && (
+        <Button
+          onClick={openInNewTab}
+          className="absolute top-4 right-4 z-20 bg-white/90 hover:bg-white text-gray-700 border"
+          size="sm"
+        >
+          <ExternalLink className="h-4 w-4 mr-1" />
+          Open
+        </Button>
+      )}
     </div>
   );
 }
