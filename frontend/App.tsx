@@ -25,17 +25,34 @@ export default function App() {
       
       <div className={cn(
         "flex-1 flex flex-col transition-all duration-300",
-        sidebarOpen ? "ml-64" : "ml-8"
+        sidebarOpen && "blur-sm"
       )}>
         <header className="bg-white shadow-sm border-b">
-          <div className="px-6 py-4">
-            <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
-              <TabsList className="grid w-full grid-cols-3 max-w-md">
-                <TabsTrigger value="department">Department</TabsTrigger>
-                <TabsTrigger value="faculty">Faculty</TabsTrigger>
-                <TabsTrigger value="syllabus">Syllabus</TabsTrigger>
-              </TabsList>
-            </Tabs>
+          <div className="px-6 py-4 flex items-center justify-between">
+            {/* Left side logos */}
+            <div className="flex items-center space-x-6">
+              <img 
+                src="https://cdn.brandfetch.io/id22X14dMP/w/600/h/457/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1755282519912" 
+                alt="IEM Logo" 
+                className="h-12 w-auto object-contain"
+              />
+              <img 
+                src="https://cdn.brandfetch.io/iddVcdJNqX/w/751/h/460/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1745353813183" 
+                alt="UEM Logo" 
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+
+            {/* Right side tabs */}
+            <div className="flex-1 flex justify-end">
+              <Tabs value={activeTab} onValueChange={handleTabChange} className="w-auto">
+                <TabsList className="grid grid-cols-3 w-auto">
+                  <TabsTrigger value="department">Department</TabsTrigger>
+                  <TabsTrigger value="faculty">Faculty</TabsTrigger>
+                  <TabsTrigger value="syllabus">Syllabus</TabsTrigger>
+                </TabsList>
+              </Tabs>
+            </div>
           </div>
         </header>
 
