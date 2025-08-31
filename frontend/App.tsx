@@ -15,17 +15,21 @@ export default function App() {
     setSidebarOpen(false);
   };
 
+  const shouldShowSidebar = activeTab === 'syllabus';
+
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      <Sidebar 
-        isOpen={sidebarOpen} 
-        onOpenChange={setSidebarOpen}
-        activeTab={activeTab}
-      />
+      {shouldShowSidebar && (
+        <Sidebar 
+          isOpen={sidebarOpen} 
+          onOpenChange={setSidebarOpen}
+          activeTab={activeTab}
+        />
+      )}
       
       <div className={cn(
         "flex-1 flex flex-col transition-all duration-300",
-        sidebarOpen && "blur-sm"
+        shouldShowSidebar && sidebarOpen && "blur-sm"
       )}>
         <header className="bg-white shadow-sm border-b">
           <div className="px-6 py-4 flex items-center justify-between">
@@ -34,12 +38,12 @@ export default function App() {
               <img 
                 src="https://cdn.brandfetch.io/id22X14dMP/w/600/h/457/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1755282519912" 
                 alt="IEM Logo" 
-                className="h-12 w-auto object-contain"
+                className="h-10 w-auto object-contain"
               />
               <img 
                 src="https://cdn.brandfetch.io/iddVcdJNqX/w/751/h/460/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1745353813183" 
                 alt="UEM Logo" 
-                className="h-12 w-auto object-contain"
+                className="h-10 w-auto object-contain"
               />
             </div>
 
