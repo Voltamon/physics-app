@@ -11,8 +11,8 @@ interface SidebarProps {
 export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProps) {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [expandedSections, setExpandedSections] = React.useState<Record<string, boolean>>({
-    theory: false,
-    practical: false
+    theory: true,
+    practical: true
   });
 
   useEffect(() => {
@@ -69,21 +69,22 @@ export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProp
   };
 
   const theoryModules = [
-    'Module 1: Introduction to Programming',
-    'Module 2: Data Structures',
-    'Module 3: Algorithms',
-    'Module 4: Object-Oriented Programming',
-    'Module 5: Database Systems',
-    'Module 6: Software Engineering'
+    'Mechanics',
+    'Thermodynamics',
+    'Waves & Oscillations',
+    'Electricity & Magnetism',
+    'Optics',
+    'Modern Physics'
   ];
 
   const practicalExperiments = [
-    'Experiment 1: Basic Programming Constructs',
-    'Experiment 2: Array and String Operations',
-    'Experiment 3: Linked List Implementation',
-    'Experiment 4: Stack and Queue Operations',
-    'Experiment 5: Tree Traversal Algorithms',
-    'Experiment 6: Database Query Operations'
+    'Young\'s Modulus',
+    'Rigidity Modulus (Static Method)',
+    'Solar Cell Expt',
+    'Band Gap (Four Probe)',
+    'Frank Hertz Expt',
+    'Cymatics Expt',
+    'Newton\'s Ring Expt'
   ];
 
   return (
@@ -111,7 +112,7 @@ export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProp
       >
         <div className="flex items-center justify-between p-4 border-b">
           <h2 className="text-lg font-semibold text-gray-800">
-            Syllabus Menu
+            Physics Syllabus
           </h2>
           <button
             onClick={() => onOpenChange(false)}
@@ -144,7 +145,7 @@ export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProp
                       key={index}
                       className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-700 border-l-2 border-blue-200 pl-4"
                     >
-                      {module}
+                      {index + 1}. {module}
                     </div>
                   ))}
                 </div>
@@ -172,7 +173,7 @@ export default function Sidebar({ isOpen, onOpenChange, activeTab }: SidebarProp
                       key={index}
                       className="p-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-700 border-l-2 border-green-200 pl-4"
                     >
-                      {experiment}
+                      {index + 1}. {experiment}
                     </div>
                   ))}
                 </div>
