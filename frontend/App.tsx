@@ -45,7 +45,7 @@ export default function App() {
             {/* Left side logos */}
             <div className="flex items-center space-x-6">
               <img 
-                src="https://cdn.brandfetch.io/id22X14dMP/w/600/h/457/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1755282519912" 
+                src="https://cdn.brandfetch.io/id22X14dMP/w/751/h/460/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1755282519912" 
                 alt="IEM Logo" 
                 className="h-10 w-auto object-contain"
               />
