@@ -23,7 +23,7 @@ export default function App() {
     setSidebarOpen(false);
   };
 
-  const shouldShowSidebar = activeTab === 'syllabus';
+  const shouldShowSidebar = false; // Sidebar removed from all tabs
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
@@ -66,12 +66,12 @@ export default function App() {
 
             {/* Right side - UEM logo */}
             <div className="flex items-center">
-              <div className="w-20 h-10 flex items-center justify-center">
+              <div className="w-20 h-10 flex items-center justify-center"> 
                 <img 
                   src="https://cdn.brandfetch.io/iddVcdJNqX/w/751/h/460/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1745353813183" 
                   alt="UEM Logo" 
                   className="max-h-10 max-w-20 w-auto h-auto object-contain"
-                />
+                />  
               </div>
             </div>
           </div>
