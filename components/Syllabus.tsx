@@ -34,57 +34,57 @@ export default function Syllabus({ selectedTopic, selectedType }: SyllabusProps)
     {
       topic: 'Waves & Oscillations',
       type: 'theory',
-      pdfUrl: 'https://drive.google.com/file/d/1example3/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Electricity & Magnetism',
       type: 'theory',
-      pdfUrl: 'https://drive.google.com/file/d/1example4/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Optics',
       type: 'theory',
-      pdfUrl: 'https://drive.google.com/file/d/1example5/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Modern Physics',
       type: 'theory',
-      pdfUrl: 'https://drive.google.com/file/d/1example6/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Young\'s Modulus',
       type: 'practical',
-      pdfUrl: 'https://drive.google.com/file/d/1practical1/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Rigidity Modulus (Static Method)',
       type: 'practical',
-      pdfUrl: 'https://drive.google.com/file/d/1practical2/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Solar Cell Experiment',
       type: 'practical',
-      pdfUrl: 'https://drive.google.com/file/d/1practical3/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Band Gap (Four Probe)',
       type: 'practical',
-      pdfUrl: 'https://drive.google.com/file/d/1practical4/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Frank Hertz Experiment',
       type: 'practical',
-      pdfUrl: 'https://drive.google.com/file/d/1practical5/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Cymatics Experiment',
       type: 'practical',
-      pdfUrl: 'https://drive.google.com/file/d/1practical6/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     },
     {
       topic: 'Newton\'s Ring Experiment',
       type: 'practical',
-      pdfUrl: 'https://drive.google.com/file/d/1practical7/view?usp=sharing'
+      pdfUrl: 'https://drive.google.com/file/d/12atHLqxiyCqhhr_QTyOmSDVUpo1nTBaj/view?usp=sharing'
     }
   ]);
 
